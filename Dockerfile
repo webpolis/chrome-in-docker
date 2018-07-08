@@ -1,11 +1,11 @@
 
-FROM ubuntu
+FROM debian:stable
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN set -xe \
     && apt-get update \
-    && apt-get install -y --no-install-recommends ca-certificates curl socat \
+    && apt-get install -y --no-install-recommends gnupg ca-certificates curl socat \
     && apt-get install -y --no-install-recommends xvfb x11vnc fluxbox xterm \
     && apt-get install -y --no-install-recommends sudo \
     && apt-get install -y --no-install-recommends supervisor \
@@ -28,7 +28,7 @@ RUN set -xe \
 COPY supervisord.conf /etc/
 COPY entry.sh /
 
-User user
+USER user
 WORKDIR /tmp
 VOLUME /tmp/chrome-data
 
