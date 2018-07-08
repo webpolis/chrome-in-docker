@@ -27,6 +27,8 @@ RUN set -xe \
 
 COPY supervisord.conf /etc/
 COPY entry.sh /
+COPY fluxbox.init /tmp/
+COPY fluxbox.init /etc/X11/fluxbox/init
 
 USER user
 WORKDIR /tmp
