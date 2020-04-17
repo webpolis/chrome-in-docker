@@ -22,7 +22,7 @@ RUN set -xe \
 # Add normal user with passwordless sudo
 #========================================
 RUN set -xe \
-    && useradd -u 1000 -g 100 -G sudo --shell /bin/bash user \
+    && useradd -u 1000 -g 100 -G sudo --shell /bin/bash -m user \
     && echo 'ALL ALL = (ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 COPY supervisord.conf /etc/

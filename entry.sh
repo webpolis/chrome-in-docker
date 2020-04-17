@@ -14,7 +14,7 @@ fi
 export CHROME=${CHROME:-/opt/google/chrome/google-chrome}
 
 # make the new volume owned by regular user
-sudo chown -Rv 1000:100 /tmp/chrome-data
+sudo chown -Rv 1000:100 /home/user/chrome-data
 
 # retain running as pid 1
 exec supervisord
