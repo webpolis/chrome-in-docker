@@ -5,11 +5,16 @@ session.menuFile:	~/.fluxbox/menu
 session.keyFile: ~/.fluxbox/keys
 session.styleFile: /usr/share/fluxbox/styles//ubuntu-light
 session.configVersion:	13
-session.screen0.toolbar.visible:  False
-session.screen0.workspacewarping: False
-session.screen0.fullMaximization: True
+session.screen0.toolbar.visible:  false
+session.screen0.workspacewarping: false
+session.screen0.fullMaximization: true
 session.screen0.workspaces: 1
 session.screen0.titlebar.right:
 session.titlebar.right:
+session.screen0.iconbar.mode: None
+session.iconbar: false
+session.screen0.slit.maxOver: true
+session.screen0.toolbar.maxOver: true
 session.menuSearch: nowhere
-session.screen0.allowRemoteActions: True
+session.screen0.allowRemoteActions: true
+session.screen0.defaultDeco: None
