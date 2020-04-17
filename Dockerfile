@@ -22,16 +22,16 @@ RUN set -xe \
 # Add normal user with passwordless sudo
 #========================================
 RUN set -xe \
-    && useradd -u 1000 -g 100 -G sudo --shell /bin/bash --no-create-home --home-dir /tmp user \
+    && useradd -u 1000 -g 100 -G sudo --shell /bin/bash user \
     && echo 'ALL ALL = (ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 COPY supervisord.conf /etc/
 COPY entry.sh /
-COPY fluxbox.init /tmp/
+COPY fluxbox.init /home/user
 COPY fluxbox.init /etc/X11/fluxbox/init
 
 USER user
-WORKDIR /tmp
-VOLUME /tmp/chrome-data
+WORKDIR /home/user
+VOLUME /home/user/chrome-data
 
 CMD ["/entry.sh"]
